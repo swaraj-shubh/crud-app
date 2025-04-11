@@ -21,6 +21,11 @@ A simple full-stack MERN (MongoDB, Express, React, Node.js) application that sup
 ### 1️⃣ Backend Setup (Node + Express)
 
 #### 📁 Navigate to the server directory
+Enter your MongoDB URL/String of your database
+{
+  "newUri": "mongodb+srv://<username>:<password>@cluster0.mongodb.net/mydb?retryWrites=true&w=majority"
+}
+
 ```bash
 cd server
 npm install
