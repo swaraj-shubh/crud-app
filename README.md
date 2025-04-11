@@ -32,6 +32,7 @@ MONGO_URI=your_mongodb_atlas_uri
 Start the backend server
 cd backend
 npm start or npm run dev
+you can see your database on: http://localhost:3000/users
 
 Frontend Setup (React + Vite)
 cd frontend

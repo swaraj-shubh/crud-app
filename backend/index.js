@@ -1,6 +1,8 @@
 const express = require('express');
 const mongoose = require('mongoose');
 require('dotenv').config();
+const { connectMongo, updateMongoURI } = require('./config/mongoConfig');
+
 
 const userRoutes = require('./routes/userRoutes');
 
@@ -19,6 +21,16 @@ app.use(cors({
 app.use(express.json());
 app.use('/users', userRoutes);
 
+
+// Dynamic URI update route
+app.post('/update-mongo-uri', (req, res) => {
+  const { newUri } = req.body;
+  if (!newUri) {
+    return res.status(400).json({ error: 'New URI is required' });
+  }
+  updateMongoURI(newUri);
+  res.status(200).json({ message: 'Mongo URI updated. Restart the server to apply changes.' });
+});
 
 
 
