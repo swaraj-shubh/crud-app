@@ -22,7 +22,7 @@ app.use(express.json());
 app.use('/users', userRoutes);
 
 
-// Dynamic URI update route
+// URI ka update
 app.post('/update-mongo-uri', (req, res) => {
   const { newUri } = req.body;
   if (!newUri) {
@@ -34,7 +34,7 @@ app.post('/update-mongo-uri', (req, res) => {
 
 
 
-// 👇 ADD THIS 👇
+
 app.get('/', (req, res) => {
     res.send('🚀 Hello from your CRUD API!');
   });
